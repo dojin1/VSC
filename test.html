@@ -6,16 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
 </head>
-    <script>
-    // <변수>
-    // 변수선언: 필요없었다 => var => var/let
-    // 상수=> 값이 처음에 셋팅되면 바꿀 수 없는 변수 ex) const k=1.1592;// constant
-    // 배열이 java:ArrayList와 많이 비슷함.
-    // 문법이 java와 많이 비슷함.
-    // <연산자> 자바와 같다. + : 연결연산자.
-    </script>
+<script src="test.js"></script>
+<script>
+    /*interactive (상호작용) //사람 <=> 컴퓨터
+    alert(); //메시지 표시(확인/ok);
+    confirm(); // yes/no 만 받아들임.
+    prompt(); //사용자의 입력데이터를 받아들임.
+    console.log("조준호") //F12 console에 표시 프로그램을 멈추지않고 메시지 확인하고싶을때.
+    alert("Hello World")
+    */
+
+    /*a=confirm("종료 하실건가요?");
+    if(a==true){
+        alert("종료할거야.");
+    } else{
+        alert("이전으로 돌아갈래.")
+    }*/
+
+    /*a=prompt("이름을 입력하세요.");
+    alert(a);*/
+
+    /*k=prompt("이름 입력해"); 
+    if(k==""){ //equals 안쓰고 ==로 가능
+        alert("입력 안했어 입력해")
+    }else{
+        alert("너의 이름은 "+k)
+    }*/
+
+    // 자신의 모바일번호 입력받고(prompt), 다시한번 주소를 입력받아서(prompt)
+    // 클라이언트 영역에 document.write()로 출력.
+
+    a=prompt("모바일번호 입력해");
+    b=prompt("주소도 입력해");
+    document.write("모바일번호: "+a+"<br>")
+    document.write("주소: "+b) 
+
+</script>
 <body>
-    <h1>아무개</h1>
-    <h1>홍길동</h1>
+   
 </body>
 </html>
