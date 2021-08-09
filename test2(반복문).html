@@ -82,13 +82,13 @@
 		// 한번이라도 나머지가 0이면 break;
 		// break로 나오면, 소수가 아님.
 		// break로 나오지 않고, for문이 모두 실행됐으면 소수
-    for(a=2;a<=100;a++){  
+    for(a=2;a<101;a++){  
         for(b=2;b<a;b++){
             if(a%b==0){
                 break;
             }
         }
-        if(a==b){ //소수확정.
+        if(a==b){ 
             document.write(a+'<br>')
         }
     } */
