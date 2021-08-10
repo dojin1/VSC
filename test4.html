@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4</title>
+</head>
+<body>
+<input type="text" name=pname id=fname><br><br>
+<input type="button" name=btnGo id=btnRun value="이름보이기" onclick='setName()'>
+<script>
+    function setName(){
+        k=prompt("Your Name:","");
+        document.getElementsByName('pname')[0].value=k;
+    }
+    </script>
+</body>
+</html>
