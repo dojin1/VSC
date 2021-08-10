@@ -38,10 +38,20 @@ function getResult(){
     alert("Interval Timer가 시작합니다.")
     gn=2;
     timer=setInterval(showText,2000);
+    
     //setTimeout(showText,3000) //setTimeout(함수명,지연시간(ms))
    /*  setTimeout(function(){
         document.getElementsByName('point')[0].value='3초가 지났습니다.'
     },3000); */ //=>이것도 가능
+
+   /*  function getResult(){
+    alert("Interval Timer가 시작합니다.")
+    gn=2;
+    timer=setInterval(function(){
+        console.log(gn);
+        document.getElementsByName('point')[0].value=gn+'초가 지났습니다.'
+        gn+=2;
+    },2000) */
 }
 function showText(){
     console.log(gn);
