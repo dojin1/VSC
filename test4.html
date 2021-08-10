@@ -8,11 +8,14 @@
 </head>
 <body>
 <input type="text" name=pname id=fname><br><br>
+<input type="text" name="pname" id=fname><br><br>
 <input type="button" name=btnGo id=btnRun value="이름보이기" onclick='setName()'>
 <script>
     function setName(){
         k=prompt("Your Name:","");
         document.getElementsByName('pname')[0].value=k;
+        k=prompt("Your MobileNumber:","");
+        document.getElementsByName('pname')[1].value=k;
     }
     </script>
 </body>

@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Array</title>
 </head>
 <body>
     
 </body>
 <script>
 // 추가(push)/삭제(pop,shift,delete)가 자유롭다.
-var ar=[5]; // 1.길이가 5인 배열. 타입없다. let 사용가능. 2.var ar=new Array();
-  
+var ar=[]; // 1.길이가 5인 배열. 타입없다. let 사용가능. 2.var ar=new Array();
+ar.push('Hello')
+ar.push('World')
+ar.push('Welcome')
+document.write(ar[0]);
+document.write(ar[1]);
+k=ar.pop();
+document.write(k);
 </script>
 </html>
