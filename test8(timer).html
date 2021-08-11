@@ -7,24 +7,35 @@
     <title>test8</title>
 </head>
 <body>
-<input type="button" value="         시작         " name='start' onclick="doStart()">
+<input type="button" value="         시작         " name='btnGo' id=btnGo>
 </body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
 <script>
     let gn;
     let timer;
-function doStart(){
+/* function doStart(){
     gn=5;
-    console.log(gn);
     timer=setInterval(function(){
-        document.getElementsByName('start')[0].value=gn
+        document.getElementsByName('start')[0].value=gn 
         gn-=1; //1씩 감소
        if(gn<0){ //1까지 표시
            clearInterval(timer); //정지
            document.getElementsByName('start')[0].value="         시작         ";
        } 
     },1000)//1초에 한번씩
-}
-
+} */
+$(document)
+.on('click','#btnGo',function(){ //클릭하면, 해당id, 실행문
+    gn=5;
+    timer=setInterval(function(){
+        $('#btnGo').val(gn);
+        gn-=1;
+        if(gn<0){
+            clearInterval(timer);
+            $('#btnGo').val("         시작         ")
+        }
+    },1000)
+})
 
 </script>
 </html>

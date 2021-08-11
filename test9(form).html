@@ -7,6 +7,26 @@
     <title>test9</title>
 </head>
 <body>
-    
+점수:<input type="text" name=point id=point><br>
+<input type="button" id=btnShow value="Show">
+<input type="button" id=btnClear value="Clear"><br>
+<!--blur : focus가 떠났을때
+click : 마우스 왼쪽버튼이 클릭됐을 때
+dlbclick : 마우스 왼쪽버튼이 더블클릭 됐을때
+change : html tag안의 값이 변경됐을 때
+-->
 </body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>    
+<script>
+$(document)
+.on('click','#btnShow',function(){
+    // point text안에 100을표시.
+    $('#point').val(100);
+    })
+.on('click','#btnClear',function(){
+    // point text안을 비운다.
+   $('#point').val('');
+})
+  
+</script>
 </html>
