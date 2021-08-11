@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test9</title>
 </head>
+<style>
+.style1 {background-color:yellow;color:blue;}
+.style2 {background-color:black;color:red;}
+</style>
 <body>
 점수:<input type="text" name=point id=point><br>
 <input type="button" id=btnShow value="Show">
@@ -19,13 +23,30 @@ change : html tag안의 값이 변경됐을 때
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>    
 <script>
 $(document)
+.ready(function(){
+    $('#point').val(0);
+    $('#btnClear').fadeOut(); // hide(); => 바로 사라짐/ fadein,out => ()안에 밀리세컨 단위로 값을 넣으면 시간조절가능.
+})
 .on('click','#btnShow',function(){
     // point text안에 100을표시.
     $('#point').val(100);
+    $(this).fadeOut(); //'#btnShow'를 this로 대체가능
+    $('#btnClear').fadeIn(); //show(); => 바로 생김
+  /*   $('#point').css('background-color','tomato');
+    $('#point').css('color','blue') */ //대신 아래처럼 가능 {'':'','':''}
+
+   /*  obj=({'background-color':'white','color':'blue'})
+    $('#point').css(obj); */
+    $('#point').removeClass('style2') //원래 있던 클래스를 지워줌
+    $('#point').addClass('style1'); //위에 지정한 클래스를 가져옴
     })
 .on('click','#btnClear',function(){
     // point text안을 비운다.
-   $('#point').val('');
+   $('#point').val(0);
+   $(this).fadeOut();
+   $('#btnShow').fadeIn();
+   //$('#point').css({'background-color':'black','color':'red'});
+   $('#point').addClass('style2');
 })
   
 </script>
