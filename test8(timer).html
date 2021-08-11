@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8</title>
+</head>
+<body>
+<input type="button" value="         시작         " name='start' onclick="doStart()">
+</body>
+<script>
+    let gn;
+    let timer;
+function doStart(){
+    gn=5;
+    console.log(gn);
+    timer=setInterval(function(){
+        document.getElementsByName('start')[0].value=gn
+        gn-=1; //1씩 감소
+       if(gn<0){ //1까지 표시
+           clearInterval(timer); //정지
+           document.getElementsByName('start')[0].value="         시작         ";
+       } 
+    },1000)//1초에 한번씩
+}
+
+
+</script>
+</html>

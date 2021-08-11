@@ -37,7 +37,7 @@
 function getResult(){
     alert("Interval Timer가 시작합니다.")
     gn=2;
-    timer=setInterval(showText,2000);
+    timer=setInterval(showText,2000); //showText를 호출이 아닌 실행등록후 조건맞으면 웹브라우저가 실행=> call-back
     
     //setTimeout(showText,3000) //setTimeout(함수명,지연시간(ms))
    /*  setTimeout(function(){
