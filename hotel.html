@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel </title>
+</head>
+<body>
+<input type="button" value="객실관리" onclick="location.href='Hotel.html'">
+<input type="button" value="예약관리" onclick="location.href='HotelReserve.html'"><br><br>
+
+<div class="1" style="float: left; margin-top: 10px;"  >
+<input type="button" value="객실목록"><br>
+<select id="roomselect" size="10">
+    <option>백두산</option>
+    <option>한라산</option>
+    <option>금강산</option>
+    <option>내장산</option>
+</select><br><br>
+</div>
+
+<div class="2" style="float:left; margin-left: 100px;">
+객실이름&nbsp; <input type="text" name=room ><br><br>
+객실분류
+<select>
+    <option>Single Room</option>
+    <option>Double Room</option>
+    <option>Suite Room</option>
+    <option>Family Room</option>
+</select><br><br>
+숙박인원&nbsp; <input type="number" min="1">명<br><br>
+
+1박요금&nbsp; <input type="text">원<br><br>
+
+<input type="button" value="등록" style="width: 80px;">
+<input type="button" value="취소" style="width: 80px;" >
+<input type="button" value="초기화" style="width: 80px;">
+
+</div>
+</body>
+</html>
