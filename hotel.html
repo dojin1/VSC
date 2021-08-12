@@ -7,11 +7,11 @@
     <title>Hotel </title>
 </head>
 <body>
-<input type="button" value="객실관리" onclick="location.href='Hotel.html'">
-<input type="button" value="예약관리" onclick="location.href='HotelReserve.html'"><br><br>
+<input type="button" id="btnroom" value="객실관리" onclick="location.href='Hotel.html'">
+<input type="button" id="btnreserve" value="예약관리" onclick="location.href='HotelReserve.html'"><br><br>
 
 <div class="1" style="float: left; margin-top: 10px;"  >
-<input type="button" value="객실목록"><br>
+<input type="button" id="btnlist" value="객실목록"><br>
 <select id="roomselect" size="10">
     <option>백두산</option>
     <option>한라산</option>
@@ -21,7 +21,7 @@
 </div>
 
 <div class="2" style="float:left; margin-left: 100px;">
-객실이름&nbsp; <input type="text" name=room ><br><br>
+객실이름&nbsp; <input type="text" name=roomname ><br><br>
 객실분류
 <select>
     <option>Single Room</option>
