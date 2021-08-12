@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id=testForm>
+        <div id=dvShow style='background-color:blue;width: 300px; height: 200px; float: right; color: yellow;' ></div>
+    모바일번호:<input type=text name=mobile id=mobile> <br>
+    이름(실명):<input type=text name=name id=name><br>
+    성별: <input type=radio name=gender id=male>남성&nbsp;
+    <input type=radio name=gender id=female>여성<br>
+    생일: <input type=date name=birth id=birth><br>
+    거주지역: <select id=selRegion><br>
+        <option value='경기'>경기</option>
+        <option value='강원'>강원</option>
+        <option value='충남'>충남</option>
+        <option value='충북'>충북</option>
+        <option value='경북'>경북</option>
+        <option value='경남'>경남</option>
+        <option value='서울'>서울</option>
+        <option value='부산'>부산</option>
+        <option value='대전'>대전</option>
+        <option value='광주'>광주</option>
+        <option value='대구'>대구</option>
+        <option value='인천'>인천</option>
+    </select><br>
+    관심분야: <input type=checkbox name=interest id=fin>재테크
+    <input type=checkbox name=interest id=estate>부동산
+    <input type=checkbox name=interest id=stock>주식
+    <input type=checkbox name=interest id=option>선물/옵션
+    <br>
+    취미: <input type=checkbox name=hobby id=movie>영화보기
+    <input type=checkbox name=hobby id=riding>모터사이클
+    <input type=checkbox name=hobby id=climbing>등산 <br>
+    비밀번호 <input type="password" name=pw id=pw> <br>
+    비밀번호 확인 <input type=password name=pwCheck id=pwCheck> <br>
+    <input type=button name=btnShow id=btnShow value="보기"> &nbsp;
+    <!-- <input type=button name=btnClear id=btnClear value="Clear"> -->
+    <button type="reset">Clear</button>
+    
+</form>
+</body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(document)
+.on('click','#btnShow',function(){
+    str1=$('#mobile').val();
+    if(str1=='') {
+        alert('모바일 입력하세요');
+        return false;
+    }
+    str2=$('#name').val();
+    if(str2=='') {
+        alert('이름 입력하세요');
+        return false;
+    }
+    if($('#male').is(':checked')){
+        str3='남성';
+    } else if($('#female').is(':checked')) {
+        str3='여성';
+    } else {
+        alert('성별을 선택하세요');
+        return false;
+    }
+    str4=$('#birth').val();
+    if(str4=='') {
+        alert('생일 입력하세요');
+        return false;
+    }
+    str5=$('#selRegion').val();
+    if(str5=='') {
+        alert('지역 선택하세요');
+        return false;
+    }
+    //구분선
+    str6='';
+    if($('#fin').is(':checked')) {
+        str6='재테크';
+    }
+    if($('#estate').is(':checked')){
+        str6+=' 부동산';
+    }
+    if($('#stock').is(':checked')){
+        str6+=' 주식';
+    }
+    if($('#option').is(':checked')) {
+        str6+=' 선물/옵션'
+    }
+    if(str6=='') {
+        alert('관심분야 최소 1개 선택해야함.')
+        return false;
+    }
+    //구분선
+    str7='';
+    if($('#movie').is(':checked')) {
+        str7='영화보기';
+    }
+    if($('#riding').is(':checked')){
+        str7+=' 모터사이클';
+    }
+    if($('#climbing').is(':checked')){
+        str7+=' 등산';
+    }
+    if(str7=='') {
+        alert('취미 최소 1개 선택해야함.');
+        return false;
+    }
+    str8=$('#pw').val();
+    if(str8=='') {
+        alert('비밀번호를 입력하세요');
+        return false;
+    }
+    str9=$('#pwCheck').val();
+    if(str9=='') {
+        alert('비밀번호 확인을 입력하세요');
+        return false;
+    }
+    if(str8!=str9) {
+        alert('비밀번호가 일치하지 않음');
+        return false;
+    }
+    str="모바일: "+str1+'<br>'+"이름: "+str2+'<br>'+"성별: "+str3+'<br>'+"생일: "+str4+'<br>'+"거주지역: "+str5+'<br>'+"관심분야: "+str6+'<br>'+"취미: "+str7;
+    $('#dvShow').html(str);
+    return false;
+})
+// .on('click','#btnClear',function(){
+//     $('#testForm').each(function(){
+//         this.reset();
+//     })
+// })
+</script>
+</html>

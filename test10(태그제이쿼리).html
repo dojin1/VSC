@@ -16,7 +16,7 @@
     <input type=checkbox name=hobby id=riding>모터사이클
     <input type=checkbox name=hobby id=climbing>등산<br>
     Textarea: <textarea id=txtAddress rows=3 cols=60></textarea><br>
-    Select: <select id=selNation size=5>
+    Select: <select id=selNation size=5>a
         <option value="KR">Korea</option>
         <option value="US">USA</option>
         <option value="FR">France</option>
@@ -30,7 +30,7 @@
 <script>
  $(document)
 .on('click','#btnShow',function(){
-        str1=$('#txtName').val();
+        str1='이름:'+$('#txtName').val();
         str2=$('#txtHidden').val();
         if($('#male').is(':checked')){
             str3='male';
