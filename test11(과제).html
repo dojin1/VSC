@@ -44,7 +44,7 @@
 비밀번호: <input type="password" id="pw"><br><br>
 비밀번호 확인: <input type="password" id="pw2"><br><br>
 <input type="button" id="btnShow" value="보기" style="width: 100px;height: 30px; float: left;">
-<input type="button" id="btnClear" value="초기화" style="width: 100px;height: 30px; float: left;">
+<input type="submit" id="btnClear" value="초기화" style="width: 100px;height: 30px; float: left;">
 <div id=dvShow style='background-color:gray;width: 300px; height: 200px; margin-top: 100px;'></div>
 </body>
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
@@ -102,7 +102,7 @@ $(document)
         s6+=''+'공모주'
     }
     else if(s6==''){
-        alert(',를 최소1개 이상 선택하세요!')
+        alert('관심분야를 최소1개 이상 선택하세요!')
         return false;
     }
     s7='';
@@ -147,14 +147,15 @@ $(document)
 .on('click','#btnClear',function(){
     $('#mobile').val('')
     $('#name').val('')
-    $('#birthday').val('')
-    $('#pw').val('')
-    $('#pw2').val('')
     $('input:radio[name=gender]').prop('checked',false); // 제이쿼리로 radio 버튼체크 해제하는법.참고
+    $('#birthday').val('')
+    $('#region').prop('selectedIndex',0); // select태그 초기화 참고
     $('input:checkbox[name=love]').prop('checked',false);
     $('input:checkbox[name=hobby]').prop('checked',false);
-    $('#region').selectmenu();
+    $('#pw').val('')
+    $('#pw2').val('')
     $('#dvShow').html('')
 })
+
 </script>
 </html>
