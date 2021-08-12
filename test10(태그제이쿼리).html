@@ -9,7 +9,7 @@
 <body>
     Text: <input type=text id=txtName value="cho"><br>
     Hidden: <input type=hidden id=txtHidden value="숨김"><br>
-    Radio: <input type=radio name=gender id=male checked>남성&nbsp;
+    Radio: <input type=radio name=gender id=male>남성&nbsp;
     <input type=radio name=gender id=female>여성<br>
     Number: <input type=number id="txtNum" value="99"><br>
     Checkbox: <input type=checkbox name=hobby id=movie>영화보기
@@ -17,12 +17,13 @@
     <input type=checkbox name=hobby id=climbing>등산<br>
     Textarea: <textarea id=txtAddress rows=3 cols=60></textarea><br>
     Select: <select id=selNation size=5>
-        <option value="Korea">Korea</option>
-        <option value="USA">USA</option>
+        <option value="KR">Korea</option>
+        <option value="US">USA</option>
         <option value="FR">France</option>
         <option value="UK">England</option>
     </select><br>
     <button id=btnShow>보기</button>
+    <button id=btnWrite>쓰기</button>
     <div id=dvShow style='background-color:gray;width: 300px; height: 200px;' ></div>
 </body>
 <script src='https://code.jquery.com/jquery-3.5.0.js'></script>
@@ -33,15 +34,17 @@
         str2=$('#txtHidden').val();
         if($('#male').is(':checked')){
             str3='male';
-        }else if($('#famale').is(':checked')){
-            str3='famale';
+        }else if($('#female').is(':checked')){
+            str3='female';
         }else {
-            str3='';
+            //str3='';
+            alert('성별을 체크 하거라')
+            
         }
         str4=$('#txtNum').val();
         str5='';
         if($('#movie').is(':checked')){
-            str5='영화보기';
+            str5='영화보기'; //위에 str=5''; 선언했기때문에 +를 붙여도되고 안붙여도됨 
         }
         if($('#riding').is(':checked')){
             str5+=' 모터사이클';
@@ -49,10 +52,29 @@
         if($('#climbing').is(':checked')){
             str5+=' 등산';
         }
+        if(str5==''){
+            alert('취미를 최소1개 이상 선택해라') //return하면 여기서 아래로 가지않음
+            return ;
+        }
         str6=$('#txtAddress').val();
         str7=$('#selNation').val();
         str=str1+'<br>'+str2+'<br>'+str3+'<br>'+str4+'<br>'+str5+'<br>'+str6+'<br>'+str7;
         $('#dvShow').html(str);
+    })
+    .on('click','#btnWrite',function(){
+        $('#txtName').val('Juno')
+        $('#txtHidden').val('숨겨');
+        $('#male').prop('checked',true);
+        $('#txtNum').val(7777777);
+        $('#movie').prop('checked',true);
+        $('#climbing').prop('checked',true);
+        $('#txtAddress').val('대한민국 서울');
+        $('#selNation').val('UK');
+        return false; // return false;를 사용해 마무리 해야함. 
+    })
+    .on('blur','#txtName',function(){ // call-back => #txtName 'blur'됐을때 function(){}문실행
+        alert($(this).val());
+        return false;
     })
 </script>
 </html>
