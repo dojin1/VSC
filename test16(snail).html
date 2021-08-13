@@ -7,10 +7,9 @@
     <title>snail</title>
 </head>
 <style>
-    td{
-        width: 100px;
-        height: 50px;
-    }
+    table{border: 1 solid;}
+    td{ width: 80px; height: 50px;}
+
 </style>
 <body>
     
@@ -19,12 +18,12 @@
 <script>
 $(document)
 .ready(function(){
-    document.write('<table id=tbl></table>'); //table 생성
+    document.write('<table id=tbl border=1></table>'); //table 생성
     n=parseInt(prompt('행과 열을 입력해 주세요.'));
     for(a=0;a<n;a++){
         $('#tbl').append('<tr></tr>'); //table에 tr추가
         for(b=0;b<n;b++){
-            $('#tbl tr:eq('+a+')'.append('<td></td>')); //table에 td를 추가하는게 아닌 그아래 tr에 td를 추가
+            $('#tbl tr:eq('+a+')'.append('<td"></td>')); //table에 td를 추가하는게 아닌 그아래 tr에 td를 추가
         }
     }
 })
