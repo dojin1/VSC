@@ -34,12 +34,12 @@
         return false;
     })
     .on('click','#btnRemove',function(){
-        $('#tbl').find('tr:first').remove(); // last -> 맨아래부터 지움
+        $('#tbl').find('tr:eq(3)').remove(); // last -> 맨아래부터 지움 'tr:eq(3)'=>인덱스3을지움
         return false;
     })
     .on('click','#btnPrepend',function(){
         n=1;
-        $('#tbl').prepend('<tr><td>1'+(n++)+'</td><td>'+(n++)+'</td><td>'+(n++)+'</td></tr>');
+        $('#tbl').prepend('<tr><td>'+(n++)+'</td><td>'+(n++)+'</td><td>'+(n++)+'</td></tr>');
         return false;
     })
 </script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test12</title>
+</head>
+<style>
+    td {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+    <table border="1" id="tbl">
+    <tr><td></td><td></td><td></td><td><td></td></td></tr>
+    <tr><td></td><td></td><td></td><td><td></td></td></tr>
+    <tr><td></td><td></td><td></td><td><td></td></td></tr>
+    <tr><td></td><td></td><td></td><td><td></td></td></tr>
+    <input type="button" id="btnGo" value="채우기">
+    </table>
+        
+</body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+    $(document)
+    .ready(function(){
+
+    })
+    .on('click','#btnGo',function(){
+        //$('#tbl').find('tr:eq(0) td:eq(0)').text('1');
+        //$('#tbl tr:eq(0) td:eq(0)').text('1')
+        var c=1; 
+        for (a=0; a<$('#tbl tr').length; a++){ // tr.length 보다 작은동안. 
+            for(b=0; b<$('#tbl tr:eq(0) td').length; b++){ //td.length 보다 작은동안.
+                $('#tbl tr:eq('+a+') td:eq('+b+')').text(c) // tr=가로(인덱스) td=세로(인덱스).text(표시)
+                c++;
+            }
+        }
+    })
+</script>
+</html>
