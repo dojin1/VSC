@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cafeapp</title>
+</head>
+<style>
+    table{background-color: cornflowerblue;}
+    td{background-color: cornflowerblue;}
+</style>
+<body>
+ <div class="0" style="float: left;">
+<table  id=tbl_menuList style="border:1px solid; height: 300px; ">
+메뉴목록  <td>
+        <select name="menuList" id="menuList" size="18" style="width: 150px;">
+            <option name=2500 id="americano">아메리카노 2500원</option>
+            <option name=3000  id="caffelate">카페라테 3000원</option>
+            <option name=2000 id="espresso">에스프레소 2000원</option>
+            <option name=3500 id="cafuchino">카푸치노 3500원</option>
+        </select>
+        </td>
+</table><br>
+</div>
+<div class="1" style="float: left; margin-left: 50px;">
+    <table id=tbl_orderList style="border:1px solid; height: 150px;">
+주문목록    <td>
+            <select name="orderList" id="orderList" size="10" style="width: 210px;">
+            </select>
+            </td>
+    </table><br>
+
+    <td>메뉴명&nbsp; <input type="text" name=menuname id="menuName" style="width: 100px;"><br><br>
+        <div style="margin-left: 15px;">
+        수량&nbsp; <input type="number" min=1 name=cnt id="count"  style="width: 100px;" >잔<br><br>
+        </div>
+        <div style="margin-left: -8px;">
+        총 요금&nbsp; <input type="text" name=totalprice id="totalPrice" style="width: 100px;">원<br><br>
+        </div>
+       
+        <input type="button" id=btnAdd value="추가" style="width: 80px;">
+        <input type="button" id=btnDelete value="삭제" style="width: 80px;"><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id=btnOrder value="주문" style="width: 80px;" >
+        </td>
+    </div>
+    <div class="2" style="float: left; margin-left: 50px;">
+        <table id=tbl_sellList style="border:1px solid; height: 150px">
+매출현황  <td>
+            
+            <select name="sellList" id="sellList" size=10 style="width: 400px;">
+            </td>
+            </select>
+        </table><br>
+        </div>
+
+        <div class="3" style="float: left; margin-left: 50px; margin-top: 230px;">
+             <table style="border:1px solid; height: 100px">
+주문자 모바일번호 <td>
+            <input type="text" name=mobile id="mobile" size="21px"><br><br>
+            <input type="button" value="등록" id=btnAddNum style="width: 90px;">
+            <input type="button" value="취소" id=btnDelNum style="width: 90px;">
+                </td>
+            </table>
+            </div>
+</body>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(document)
+.on('click',"#americano",function(){
+    price=2500;
+    $('#menuName').val('아메리카노');
+})
+.on('click',"#caffelate",function(){
+    price=3000;
+    $('#menuName').val('카페라테');
+})
+.on('click',"#espresso",function(){
+    price=2000
+    $('#menuName').val('에스프레소');
+})
+.on('click',"#cafuchino",function(){
+    //price=$('#cafuchino').val(value);
+    $('#menuName').val('카푸치노');
+    price=3500;
+})
+.on('blur','#count',function(){
+    sum=price*$('#count').val();
+    $('#totalPrice').val(sum);
+})
+.on('click','#btnAdd',function(){
+    $('#orderList').append('<option value=1>'+$('#menuName').val()+' '+$('#count').val()+'잔'+' '+sum+'원')+'</option>';
+})
+.on('click','#btnDelete',function(){
+    confirm('삭제하시겠습니까? 마지막에 추가한 목록이 삭제 됩니다')
+    $('#orderList option:last').remove();
+})
+.on('click','#btnOrder',function(){
+    m=prompt('주문자의 모바일번호를 입력해주세요.')
+    $('#mobile').append($('#mobile').val(m));
+})
+.on('click','#btnAddNum',function(){
+    for(i=0; i<$('#tbl_orderList tr').length; i++){
+        Order=$('#tbl_orderList tr:eq('+i+')').text();
+        $('#sellList').append('<option>'+$('#mobile').val()+' '+Order+'</option>')
+        return false;
+    }
+})
+.on('click','#btnDelNum',function(){
+    $('#mobile').val('');
+})
+</script>
+</html>
